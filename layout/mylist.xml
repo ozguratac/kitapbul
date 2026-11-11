@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/listlem"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
+        android:background="#c4c4c4"></RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/listlem"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white">
+
+        <TextView
+            android:id="@+id/yazar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/baslik"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="3dp"
+            android:layout_toEndOf="@+id/resim"
+            android:maxLines="1"
+            android:text="Ahmet ÜMİT"
+            android:textSize="12sp"
+            android:textStyle="normal|bold" />
+
+        <TextView
+            android:id="@+id/baslik"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/resim"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="3dp"
+            android:layout_toEndOf="@+id/resim"
+            android:maxLines="2"
+            android:text="AŞKIMIZ ESKİ BİR ROMAN"
+            android:textColor="@android:color/black"
+            android:textSize="14sp"
+            android:textStyle="normal|bold" />
+
+        <TextView
+            android:id="@+id/yayinevi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/yazar"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="5dp"
+            android:layout_toEndOf="@+id/resim"
+            android:autoText="false"
+            android:maxLines="1"
+            android:text="Yapı Kredi Y4ayınları"
+            android:textSize="12sp"
+            android:textStyle="normal" />
+
+        <ImageView
+            android:id="@+id/resim"
+            android:layout_width="80dp"
+            android:layout_height="120dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="5dp"
+            android:background="#e8e8e8"
+            android:scaleType="centerCrop"
+            android:visibility="visible" />
+
+        <TextView
+            android:id="@+id/fiyat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/resim"
+            android:layout_centerHorizontal="false"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_toEndOf="@+id/resim"
+            android:gravity="center"
+            android:text="255,45 TL"
+            android:textColor="#1c1c1c"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <WebView
+            android:id="@+id/resimWebBul"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignBottom="@+id/resim"
+            android:layout_alignLeft="@+id/resim"
+            android:layout_alignRight="@+id/resim"
+            android:layout_alignTop="@+id/resim"
+            android:scrollbars="none"
+            android:visibility="invisible" />
+
+        <ImageView
+            android:id="@+id/tiklaButon"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/resim"
+            android:layout_alignParentBottom="false"
+            android:layout_alignTop="@+id/resim"
+            android:alpha="0"
+            app:srcCompat="@android:drawable/screen_background_light" />
+
+        <ImageView
+            android:id="@+id/sepetEkleButon"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignBottom="@+id/fiyat"
+            android:layout_alignParentRight="false"
+            android:layout_marginRight="10dp"
+            android:layout_toLeftOf="@+id/kitaplikekleButon"
+            android:clickable="false"
+            android:visibility="invisible"
+            app:srcCompat="@drawable/sepet" />
+
+        <ImageView
+            android:id="@+id/kitaplikekleButon"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_alignBottom="@+id/fiyat"
+            android:layout_alignParentRight="false"
+            android:layout_marginRight="5dp"
+            android:layout_toLeftOf="@+id/detayButon"
+            android:clickable="false"
+            app:srcCompat="@drawable/kitaplikekle" />
+
+        <ImageView
+            android:id="@+id/detayButon"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_alignBottom="@+id/tiklaButon"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="14dp"
+            android:clickable="true"
+            app:srcCompat="@drawable/info" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

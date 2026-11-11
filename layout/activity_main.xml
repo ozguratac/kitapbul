@@ -1,0 +1,2481 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:background="#ffffff"
+    tools:context=".MainActivity">
+
+
+
+    <RelativeLayout
+        android:id="@+id/aramaKatmani"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+        <RelativeLayout
+            android:id="@+id/relativeLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="20dp"
+            android:background="#dcdcdc"
+            android:padding="1dp">
+
+            <EditText
+                android:id="@+id/aramaMetin"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_alignParentLeft="false"
+                android:background="#efefef"
+                android:freezesText="false"
+                android:gravity="left|center_vertical"
+                android:hint="Kitap Ad, Yazar, Yayınevi, Barkod"
+                android:imeOptions="actionSearch"
+                android:lines="1"
+                android:maxLines="1"
+                android:paddingLeft="45dp"
+                android:paddingRight="25dp"
+                android:singleLine="true"
+                android:textColor="#000000"
+                android:textColorHint="@android:color/darker_gray"
+                android:textSize="13sp" />
+
+            <ImageView
+                android:id="@+id/bulResim"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                ads:srcCompat="@drawable/arayeni" />
+
+            <ImageView
+                android:id="@+id/metinSil2"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_alignRight="@+id/aramaMetin"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="5dp"
+                android:onClick="metinSil"
+                android:padding="2dp"
+                android:visibility="invisible"
+                ads:srcCompat="@drawable/metinsil" />
+        </RelativeLayout>
+
+        </LinearLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/yeni"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/altMenu"
+        android:layout_below="@+id/aramaKatmani">
+
+        <ScrollView
+            android:id="@+id/yeniKaydir"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollIndicators="none"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+                <RelativeLayout
+                    android:id="@+id/cokArananKatmani"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#d6d6d6">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp">
+
+                        <TextView
+                            android:id="@+id/textView2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp"
+                            android:layout_marginTop="10dp"
+                            android:text="ÇOK ARANANLAR"
+                            android:textColor="@android:color/black"
+                            android:textSize="14sp"
+                            android:textStyle="normal|bold" />
+
+                        <HorizontalScrollView
+                            android:id="@+id/cokArananlarKaydir"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp"
+                            android:scrollIndicators="none"
+                            android:scrollbars="none">
+
+                            <LinearLayout
+                                android:id="@+id/cokArananlarYatay"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal" />
+                        </HorizontalScrollView>
+
+                    </LinearLayout>
+                </RelativeLayout>
+
+                <com.google.android.gms.ads.AdView
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:id="@+id/bannerReklam"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_gravity="center_horizontal"
+                    ads:adSize="SMART_BANNER"
+                    android:background="#FFFFFF"
+                   
+                    ads:adUnitId="ca-app-pub-4061139306454785/9803091808"></com.google.android.gms.ads.AdView>
+
+                <RelativeLayout
+                    android:id="@+id/populerKitapKatmani"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/background_light"
+                    android:paddingBottom="20dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp">
+
+                        <TextView
+                            android:id="@+id/textView24"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp"
+                            android:layout_marginTop="10dp"
+                            android:text="ÇOK BEĞENİLENLER"
+                            android:textColor="@android:color/black"
+                            android:textSize="14sp"
+                            android:textStyle="normal|bold" />
+
+                        <HorizontalScrollView
+                            android:id="@+id/populerKitaplarKAydir"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:scrollIndicators="none"
+                            android:scrollbars="none">
+
+                            <LinearLayout
+                                android:id="@+id/populerKitaplarYatay"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal" />
+                        </HorizontalScrollView>
+
+                    </LinearLayout>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/tanitimKatmani"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="0dp"
+                    android:background="@android:color/background_light"
+                    android:paddingBottom="20dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp">
+
+                        <HorizontalScrollView
+                            android:id="@+id/tanitimKaydir"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:scrollIndicators="none"
+                            android:scrollbars="none">
+
+                            <LinearLayout
+                                android:id="@+id/tanitimYatay"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal" />
+                        </HorizontalScrollView>
+
+                        <TextView
+                            android:id="@+id/textView2422299"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp"
+                            android:layout_marginTop="10dp"
+                            android:text="KİTAP TANITIMI"
+                            android:textColor="@android:color/black"
+                            android:textSize="14sp"
+                            android:textStyle="normal|bold" />
+
+                    </LinearLayout>
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/populerYazarKatmani"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="@android:color/background_light">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp">
+
+                        <TextView
+                            android:id="@+id/textView24222"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp"
+                            android:layout_marginTop="10dp"
+                            android:text="POPÜLER YAZARLAR"
+                            android:textColor="@android:color/black"
+                            android:textSize="14sp"
+                            android:textStyle="normal|bold" />
+
+                        <HorizontalScrollView
+                            android:id="@+id/populerYazarKaydir"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:scrollIndicators="none"
+                            android:scrollbars="none">
+
+                            <LinearLayout
+                                android:id="@+id/populerYazarYatay"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal" />
+                        </HorizontalScrollView>
+
+                    </LinearLayout>
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/tavsiyeKitapKatmani"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="@android:color/background_light">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp">
+
+                        <TextView
+                            android:id="@+id/textView24tav"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp"
+                            android:layout_marginTop="10dp"
+                            android:text="OKUMA ÖNERİLERİ"
+                            android:textColor="@android:color/black"
+                            android:textSize="14sp"
+                            android:textStyle="normal|bold" />
+
+                        <HorizontalScrollView
+                            android:id="@+id/tavsiyeKitaplarKaydir"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:scrollIndicators="none"
+                            android:scrollbars="none">
+
+                            <LinearLayout
+                                android:id="@+id/tavsiyeKitaplarYatay"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal" />
+                        </HorizontalScrollView>
+
+                    </LinearLayout>
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/populerSitelerKatman"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="0dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp">
+
+                        <HorizontalScrollView
+                            android:id="@+id/populerSiteKaydir"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:scrollIndicators="none"
+                            android:scrollbars="none">
+
+                            <LinearLayout
+                                android:id="@+id/populerSiteYatay"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal" />
+                        </HorizontalScrollView>
+
+                        <TextView
+                            android:id="@+id/populerSitelerBaslik"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp"
+                            android:layout_marginTop="10dp"
+                            android:text="ÇOK SATAN LİSTELERİ"
+                            android:textColor="@android:color/black"
+                            android:textSize="14sp"
+                            android:textStyle="normal|bold" />
+
+                    </LinearLayout>
+                </RelativeLayout>
+
+            </LinearLayout>
+        </ScrollView>
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/altMenu"
+        android:layout_alignParentStart="false"
+        android:layout_alignParentTop="false"
+        android:layout_below="@+id/aramaKatmani"
+        android:visibility="visible">
+
+        <RelativeLayout
+            android:id="@+id/araKatman"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:visibility="invisible">
+
+
+            <ImageView
+                android:id="@+id/sepetButon"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentEnd="false"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="1dp"
+                android:layout_toLeftOf="@+id/evButon"
+                android:clickable="false"
+                android:onClick="sepetKatmanAc"
+                app:srcCompat="@drawable/sepetust" />
+
+            <ImageView
+                android:id="@+id/barkodButon"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentEnd="false"
+                android:layout_alignParentRight="false"
+                android:layout_marginRight="1dp"
+                android:layout_toRightOf="@+id/evButon"
+                android:clickable="true"
+                android:onClick="aramaYap"
+                app:srcCompat="@drawable/barkod" />
+
+            <ImageView
+                android:id="@+id/araButon"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentEnd="false"
+                android:layout_alignParentLeft="false"
+                android:layout_alignParentRight="false"
+                android:layout_marginLeft="1dp"
+                android:layout_toLeftOf="@+id/sepetButon"
+                android:clickable="true"
+                android:onClick="aramaYap"
+                app:srcCompat="@drawable/ara" />
+
+            <ImageView
+                android:id="@+id/evButon"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentEnd="false"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="false"
+                android:layout_marginRight="1dp"
+                android:clickable="true"
+                android:onClick="kitaplikAc"
+                app:srcCompat="@drawable/kitaplikbuton" />
+
+            <EditText
+                android:id="@+id/aramaMetin111"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_alignParentLeft="false"
+                android:layout_toEndOf="@+id/barkodButon"
+                android:layout_toStartOf="@+id/araButon"
+                android:autoText="false"
+                android:background="@android:color/darker_gray"
+                android:gravity="left|center_vertical"
+                android:lines="1"
+                android:maxLines="1"
+                android:paddingLeft="10dp"
+                android:paddingRight="35dp"
+                android:singleLine="true"
+                android:textColor="@android:color/background_light"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/sepetSayi"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_alignRight="@+id/sepetButon"
+                android:layout_alignTop="@+id/sepetButon"
+                android:autoText="true"
+                android:background="@drawable/kirmizi"
+                android:gravity="center_vertical|center_horizontal"
+                android:text="0"
+                android:textColor="@android:color/background_light"
+                android:textSize="13sp"
+                tools:text="0">
+
+            </TextView>
+
+            <RelativeLayout
+                android:id="@+id/sepetButonUst"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignBottom="@+id/sepetButon"
+                android:layout_alignLeft="@+id/sepetButon"
+                android:layout_alignRight="@+id/sepetButon"
+                android:layout_alignTop="@+id/sepetButon"
+                android:clickable="true"
+                android:onClick="sepetKatmanAc">
+
+
+            </RelativeLayout>
+
+            <ImageView
+                android:id="@+id/metinSil"
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/aramaMetin111"
+                android:layout_alignRight="@+id/aramaMetin111"
+                android:onClick="metinSil"
+                android:padding="12dp"
+                android:visibility="invisible"
+                app:srcCompat="@drawable/metinsil" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/teknosaListe"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/araKatman"
+            android:visibility="invisible">
+
+            <TextView
+                android:id="@+id/cokSatanlar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="5dp"
+                android:text="HEPSİBURADA"
+                android:textColor="#ac1e1e"
+                android:textSize="13sp"
+                android:textStyle="normal|bold"
+                android:visibility="visible" />
+
+            <RelativeLayout
+                android:id="@+id/bar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/cokSatanlar"
+                android:paddingTop="2dp">
+
+                <LinearLayout
+                    android:id="@+id/barIc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RelativeLayout
+                        android:id="@+id/yeniCikan"
+                        android:layout_width="170dp"
+                        android:layout_height="40dp"
+                        android:background="#9e9e9e"
+                        android:clickable="true"
+                        android:gravity="center_vertical|center_horizontal"
+                        android:onClick="listeBarGecis">
+
+                        <TextView
+                            android:id="@+id/yeniMetin"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:text="YENİ ÇIKANLAR"
+                            android:textColor="@android:color/white"
+                            android:textSize="12sp"
+                            android:textStyle="normal|bold" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/cokOkunan"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:clickable="true"
+                        android:gravity="center_vertical|center_horizontal"
+                        android:onClick="listeBarGecis">
+
+                        <TextView
+                            android:id="@+id/okunanMetin"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:text="ÇOK SATANLAR"
+                            android:textColor="#717171"
+                            android:textSize="12sp"
+                            android:textStyle="normal|bold" />
+                    </RelativeLayout>
+                </LinearLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/cizgi5"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/bar"
+                android:layout_marginBottom="5dp"
+                android:background="#9e9e9e" />
+
+            <ScrollView
+                android:id="@+id/kaydirma"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/cizgi5">
+
+                <LinearLayout
+                    android:id="@+id/listem"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"></LinearLayout>
+            </ScrollView>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/anaListe"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/araKatman"
+            android:visibility="invisible">
+
+            <ScrollView
+                android:id="@+id/scrollView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:id="@+id/anaListeResimler"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"></LinearLayout>
+            </ScrollView>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/fiyatListe"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/araKatman"
+            android:background="@android:color/background_light"
+            android:visibility="invisible">
+
+            <ScrollView
+                android:id="@+id/scrollView5"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scrollbars="none"
+                android:visibility="visible">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="?attr/colorButtonNormal">
+
+                    <RelativeLayout
+                        android:id="@+id/bulunan2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:background="@android:color/white"
+                        android:paddingLeft="5dp"
+                        android:paddingRight="10dp"
+                        android:paddingTop="5dp">
+
+                        <TextView
+                            android:id="@+id/aciklamaBaslik"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignLeft="@+id/cerceveRes"
+                            android:layout_below="@+id/cerceveRes"
+                            android:layout_marginTop="8dp"
+                            android:maxLines="1"
+                            android:text="Kitap Açıklaması"
+                            android:textColor="@android:color/black"
+                            android:textSize="13sp"
+                            android:textStyle="normal|bold" />
+
+                        <TextView
+                            android:id="@+id/kYazar5"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/kAd5"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_toEndOf="@+id/cerceveRes"
+                            android:maxLines="1"
+                            android:text="Ahmet ÜMİT"
+                            android:textSize="13sp"
+                            android:textStyle="normal|bold" />
+
+                        <TextView
+                            android:id="@+id/kAd5"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentTop="true"
+                            android:layout_alignTop="@+id/cerceveRes"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_toEndOf="@+id/cerceveRes"
+                            android:gravity="bottom"
+                            android:lines="2"
+                            android:maxLines="2"
+                            android:text="ELVEDA GÜZEL VATANIM"
+                            android:textColor="@android:color/black"
+                            android:textSize="15sp"
+                            android:textStyle="normal|bold" />
+
+                        <TextView
+                            android:id="@+id/kitapAciklama5"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignLeft="@+id/aciklamaBaslik"
+                            android:layout_below="@+id/aciklamaBaslik"
+                            android:layout_marginBottom="10dp"
+                            android:layout_marginTop="8dp"
+                            android:autoText="false"
+                            android:ellipsize="end"
+                            android:justificationMode="inter_word"
+                            android:maxLines="6"
+                            android:textColor="@android:color/black"
+                            android:textSize="11sp"
+                            android:textStyle="normal" />
+
+                        <RelativeLayout
+                            android:id="@+id/cerceveRes"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentTop="true"
+                            android:layout_centerVertical="false"
+                            android:layout_margin="5dp"
+                            android:background="?android:attr/statusBarColor">
+
+                            <ImageView
+                                android:id="@+id/kitaplikResim5"
+                                android:layout_width="100dp"
+                                android:layout_height="140dp"
+                                android:layout_marginBottom="2dp"
+                                android:layout_marginLeft="2dp"
+                                android:layout_marginRight="2dp"
+                                android:layout_marginTop="2dp"
+                                android:scaleType="fitXY"
+                                android:visibility="visible" />
+                        </RelativeLayout>
+
+                        <TextView
+                            android:id="@+id/kYayinevi5"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/kYazar5"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_toEndOf="@+id/cerceveRes"
+                            android:maxLines="1"
+                            android:text="Yapı Kredi Yayınları"
+                            android:textSize="13sp"
+                            android:textStyle="normal" />
+
+                        <LinearLayout
+                            android:id="@+id/begen"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignBottom="@+id/cerceveRes"
+                            android:layout_alignLeft="@+id/kAd5"
+                            android:orientation="horizontal">
+
+                            <LinearLayout
+                                android:id="@+id/begentoplu"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignBottom="@+id/cerceveRes"
+                                android:layout_alignLeft="@+id/kAd5"
+                                android:orientation="vertical">
+
+                                <ImageView
+                                    android:id="@+id/begenButon"
+                                    android:layout_width="35dp"
+                                    android:layout_height="20dp"
+                                    android:layout_alignLeft="@+id/kAd5"
+                                    android:onClick="kitapBegenTikla"
+                                    ads:srcCompat="@drawable/begenpasif" />
+
+                                <TextView
+                                    android:id="@+id/begenMetin"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignBottom="@+id/cerceveRes"
+                                    android:layout_alignLeft="@+id/begenButon"
+                                    android:layout_alignRight="@+id/begenButon"
+                                    android:gravity="center_horizontal"
+                                    android:text="Beğen"
+                                    android:textColor="@android:color/black"
+                                    android:textSize="10sp" />
+                            </LinearLayout>
+
+                            <RelativeLayout
+                                android:layout_width="1dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginRight="5dp"
+                                android:background="@android:color/black">
+
+                            </RelativeLayout>
+
+                            <TextView
+                                android:id="@+id/begenmeSayi"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_weight="1"
+                                android:text="0 Defa Beğenildi"
+                                android:textSize="12sp"
+                                android:textStyle="bold" />
+
+                        </LinearLayout>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/bulunan"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_below="@+id/bulunan2"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginBottom="3dp"
+                        android:background="@android:color/background_light"
+                        android:paddingTop="5dp">
+
+
+                        <ImageView
+                            android:id="@+id/siralamaButon3"
+                            android:layout_width="108dp"
+                            android:layout_height="25dp"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentRight="false"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginBottom="5dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="5dp"
+                            android:layout_marginTop="5dp"
+                            android:clickable="false"
+                            android:onClick="detayGoster"
+                            ads:srcCompat="@drawable/detay" />
+
+                        <ImageView
+                            android:id="@+id/siralamaButon"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_centerHorizontal="true"
+                            android:layout_centerVertical="true"
+                            android:layout_margin="5dp"
+                            android:layout_toLeftOf="@+id/siralamaButon2"
+                            android:clickable="false"
+                            android:onClick="siralaA"
+                            app:srcCompat="@drawable/sort" />
+
+                        <ImageView
+                            android:id="@+id/kitaplikEkleYeniButon"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_centerHorizontal="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginBottom="5dp"
+                            android:layout_marginEnd="5dp"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_toLeftOf="@id/siralamaButon"
+                            android:clickable="false"
+
+                            android:onClick="kitapligaEkle"
+                            ads:srcCompat="@drawable/kitaplikeklekucuk" />
+
+                        <ImageView
+                            android:id="@+id/siralamaButon2"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerHorizontal="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginBottom="5dp"
+                            android:layout_marginEnd="5dp"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginRight="10dp"
+
+                            android:clickable="false"
+                            android:onClick="siralaA"
+                            app:srcCompat="@drawable/sortters" />
+
+                        <RelativeLayout
+                            android:id="@+id/cizgi"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_below="@+id/siralamaButon"
+                            android:layout_marginBottom="10dp"
+                            android:layout_marginTop="10dp"
+                            android:background="@android:color/black">
+
+                        </RelativeLayout>
+
+
+                    </RelativeLayout>
+
+                    <LinearLayout
+                        android:id="@+id/listeFiyatlar"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_below="@+id/bulunan"
+                        android:layout_centerHorizontal="true"
+                        android:orientation="vertical"
+                        android:paddingLeft="5dp"
+                        android:paddingRight="5dp">
+
+
+                        <RelativeLayout
+                            android:id="@+id/drKatman"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginBottom="3dp"
+                            android:layout_marginLeft="3dp"
+                            android:layout_marginRight="3dp"
+                            android:layout_marginTop="3dp"
+                            android:background="@android:color/background_light"
+                            android:onClick="webGorunumAc"
+                            android:paddingBottom="2dp"
+                            android:paddingTop="2dp">
+
+
+                            <ImageView
+                                android:id="@+id/sepet"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp"
+                                android:layout_alignParentBottom="false"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginRight="10dp"
+                                android:tag="dr"
+                                android:onClick="tiklandi"
+                                app:srcCompat="@drawable/sepet" />
+
+                            <TextView
+                                android:id="@+id/drFiyat"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="false"
+                                android:layout_centerHorizontal="false"
+                                android:layout_centerVertical="true"
+                                android:layout_toLeftOf="@+id/sepet"
+                                android:layout_toRightOf="@+id/drResim"
+                                android:gravity="center_vertical|center_horizontal"
+                                android:text="Bekleniyor..."
+                                android:textColor="@android:color/background_dark"
+                                android:textSize="20sp" />
+
+
+                            <ImageView
+                                android:id="@+id/drResim"
+                                android:layout_width="180dp"
+                                android:layout_height="100dp"
+                                android:layout_margin="5dp"
+                                android:scaleType="fitCenter"
+                                app:srcCompat="@drawable/dr" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/idefixKatman"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginBottom="3dp"
+                            android:layout_marginLeft="3dp"
+                            android:layout_marginRight="3dp"
+                            android:layout_marginTop="3dp"
+                            android:background="@android:color/background_light"
+                            android:onClick="webGorunumAc"
+                            android:paddingBottom="2dp"
+                            android:paddingTop="2dp">
+
+                            <ImageView
+                                android:id="@+id/sepet2"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp"
+                                android:layout_alignParentBottom="false"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginRight="10dp"
+                                android:onClick="tiklandi"
+                                android:tag="idefix"
+                                app:srcCompat="@drawable/sepet" />
+
+                            <TextView
+                                android:id="@+id/idefixFiyat"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="false"
+                                android:layout_centerHorizontal="false"
+                                android:layout_centerVertical="true"
+                                android:layout_toLeftOf="@+id/sepet2"
+                                android:layout_toRightOf="@+id/idefixResim"
+                                android:gravity="center_vertical|center_horizontal"
+                                android:text="bekleniyor"
+                                android:textColor="@android:color/background_dark"
+                                android:textSize="20sp" />
+
+                            <ImageView
+                                android:id="@+id/idefixResim"
+                                android:layout_width="180dp"
+                                android:layout_height="100dp"
+                                android:layout_margin="5dp"
+                                android:scaleType="fitCenter"
+                                app:srcCompat="@drawable/idefix" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/alternatifKatman"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginBottom="3dp"
+                            android:layout_marginLeft="3dp"
+                            android:layout_marginRight="3dp"
+                            android:layout_marginTop="3dp"
+                            android:background="@android:color/background_light"
+                            android:onClick="webGorunumAc"
+                            android:paddingBottom="2dp"
+                            android:paddingTop="2dp">
+
+                            <ImageView
+                                android:id="@+id/sepet9998"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp"
+                                android:layout_alignParentBottom="false"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginRight="10dp"
+                                android:onClick="tiklandi"
+                                android:tag="alternatif"
+                                app:srcCompat="@drawable/sepet" />
+
+                            <TextView
+                                android:id="@+id/alternatifFiyat"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="false"
+                                android:layout_centerHorizontal="false"
+                                android:layout_centerVertical="true"
+                                android:layout_toLeftOf="@+id/sepet9998"
+                                android:layout_toRightOf="@+id/alternatifResim"
+                                android:gravity="center_vertical|center_horizontal"
+                                android:text="bekleniyor"
+                                android:textColor="@android:color/background_dark"
+                                android:textSize="20sp" />
+
+                            <ImageView
+                                android:id="@+id/alternatifResim"
+                                android:layout_width="180dp"
+                                android:layout_height="100dp"
+                                android:layout_margin="5dp"
+                                android:scaleType="fitCenter"
+                                app:srcCompat="@drawable/alternatif" />
+                        </RelativeLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <RelativeLayout
+                            android:id="@+id/hbKatman"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginBottom="3dp"
+                            android:layout_marginLeft="3dp"
+                            android:layout_marginRight="3dp"
+                            android:layout_marginTop="3dp"
+                            android:background="@android:color/background_light"
+                            android:onClick="webGorunumAc"
+                            android:paddingBottom="2dp"
+                            android:paddingTop="2dp">
+
+                            <ImageView
+                                android:id="@+id/sepet3"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp"
+                                android:layout_alignParentBottom="false"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginRight="10dp"
+                                android:onClick="tiklandi"
+                                android:tag="hb"
+                                app:srcCompat="@drawable/sepet" />
+
+                            <TextView
+                                android:id="@+id/hbFiyat"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="false"
+                                android:layout_centerHorizontal="false"
+                                android:layout_centerVertical="true"
+                                android:layout_toLeftOf="@+id/sepet3"
+                                android:layout_toRightOf="@+id/hbResim"
+                                android:gravity="center_vertical|center_horizontal"
+                                android:text="bekleniyor"
+                                android:textColor="@android:color/background_dark"
+                                android:textSize="20sp" />
+
+                            <ImageView
+                                android:id="@+id/hbResim"
+                                android:layout_width="180dp"
+                                android:layout_height="100dp"
+                                android:layout_margin="5dp"
+                                android:scaleType="fitCenter"
+                                app:srcCompat="@drawable/hepsiburada" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/kyKatman"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginBottom="3dp"
+                            android:layout_marginLeft="3dp"
+                            android:layout_marginRight="3dp"
+                            android:layout_marginTop="3dp"
+                            android:background="@android:color/background_light"
+                            android:onClick="webGorunumAc"
+                            android:paddingBottom="2dp"
+                            android:paddingTop="2dp">
+
+                            <ImageView
+                                android:id="@+id/sepet11"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp"
+                                android:layout_alignParentBottom="false"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginRight="10dp"
+                                android:tag="ky"
+                                android:onClick="tiklandi"
+
+                                app:srcCompat="@drawable/sepet" />
+
+                            <TextView
+                                android:id="@+id/kyFiyat"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="false"
+                                android:layout_centerHorizontal="false"
+                                android:layout_centerVertical="true"
+                                android:layout_toLeftOf="@+id/sepet11"
+                                android:layout_toRightOf="@+id/kyResim"
+                                android:gravity="center_vertical|center_horizontal"
+                                android:text="bekleniyor"
+                                android:textColor="@android:color/background_dark"
+                                android:textSize="20sp" />
+
+                            <ImageView
+                                android:id="@+id/kyResim"
+                                android:layout_width="180dp"
+                                android:layout_height="100dp"
+                                android:layout_margin="5dp"
+                                android:scaleType="fitCenter"
+                                app:srcCompat="@drawable/kitapyurdu" />
+                        </RelativeLayout>
+
+
+                        <RelativeLayout
+                            android:id="@+id/babilKatman"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_marginBottom="0dp"
+                            android:layout_marginLeft="0dp"
+                            android:layout_marginRight="0dp"
+                            android:layout_marginTop="0dp"
+                            android:background="@android:color/background_light"
+                            android:onClick="webGorunumAc"
+                            android:paddingBottom="2dp"
+                            android:paddingTop="2dp">
+
+                            <ImageView
+                                android:id="@+id/sepet13"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp"
+                                android:layout_alignParentBottom="false"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginRight="10dp"
+                                android:onClick="tiklandi"
+                                android:tag="bb"
+                                ads:srcCompat="@drawable/sepet" />
+
+                            <TextView
+                                android:id="@+id/babilFiyat"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="false"
+                                android:layout_centerHorizontal="false"
+                                android:layout_centerVertical="true"
+                                android:layout_toLeftOf="@+id/sepet13"
+                                android:layout_toRightOf="@+id/babilResim"
+                                android:gravity="center_vertical|center_horizontal"
+                                android:text="bekleniyor"
+                                android:textColor="@android:color/background_dark"
+                                android:textSize="20sp" />
+
+                            <ImageView
+                                android:id="@+id/babilResim"
+                                android:layout_width="180dp"
+                                android:layout_height="100dp"
+                                android:layout_margin="5dp"
+                                android:scaleType="fitCenter"
+                                app:srcCompat="@drawable/babil" />
+                        </RelativeLayout>
+
+
+                        <RelativeLayout
+                            android:id="@+id/kediKatman"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginBottom="3dp"
+                            android:layout_marginLeft="3dp"
+                            android:layout_marginRight="3dp"
+                            android:layout_marginTop="3dp"
+                            android:background="@android:color/background_light"
+                            android:onClick="webGorunumAc"
+                            android:paddingBottom="2dp"
+                            android:paddingTop="2dp">
+
+                            <ImageView
+                                android:id="@+id/sepet133"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp"
+                                android:layout_alignParentBottom="false"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginRight="10dp"
+                                android:onClick="tiklandi"
+                                android:tag="kedi"
+                                ads:srcCompat="@drawable/sepet" />
+
+                            <TextView
+                                android:id="@+id/kediFiyat"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="false"
+                                android:layout_centerHorizontal="false"
+                                android:layout_centerVertical="true"
+                                android:layout_toLeftOf="@+id/sepet133"
+                                android:layout_toRightOf="@+id/kediResim"
+                                android:gravity="center_vertical|center_horizontal"
+                                android:text="bekleniyor"
+                                android:textColor="@android:color/background_dark"
+                                android:textSize="20sp" />
+
+                            <ImageView
+                                android:id="@+id/kediResim"
+                                android:layout_width="180dp"
+                                android:layout_height="100dp"
+                                android:layout_margin="5dp"
+                                android:scaleType="fitCenter"
+                                app:srcCompat="@drawable/tamadres" />
+                        </RelativeLayout>
+
+
+                        <RelativeLayout
+                            android:id="@+id/kitap16Katman"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginBottom="3dp"
+                            android:layout_marginLeft="3dp"
+                            android:layout_marginRight="3dp"
+                            android:layout_marginTop="3dp"
+                            android:background="@android:color/background_light"
+                            android:onClick="webGorunumAc"
+                            android:paddingBottom="2dp"
+                            android:paddingTop="2dp">
+
+                            <ImageView
+                                android:id="@+id/sepet1316"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp"
+                                android:layout_alignParentBottom="false"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginRight="10dp"
+                                android:onClick="tiklandi"
+                                android:tag="kitap16"
+                                ads:srcCompat="@drawable/sepet" />
+
+                            <TextView
+                                android:id="@+id/kitap16Fiyat"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="false"
+                                android:layout_centerHorizontal="false"
+                                android:layout_centerVertical="true"
+                                android:layout_toLeftOf="@+id/sepet1316"
+                                android:layout_toRightOf="@+id/kitap16Resim"
+                                android:gravity="center_vertical|center_horizontal"
+                                android:text="bekleniyor"
+                                android:textColor="@android:color/background_dark"
+                                android:textSize="20sp" />
+
+                            <ImageView
+                                android:id="@+id/kitap16Resim"
+                                android:layout_width="180dp"
+                                android:layout_height="100dp"
+                                android:layout_margin="5dp"
+                                android:scaleType="fitCenter"
+                                app:srcCompat="@drawable/kitaponalti" />
+                        </RelativeLayout>
+
+
+                        <RelativeLayout
+                            android:id="@+id/istKatman"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginBottom="3dp"
+                            android:layout_marginLeft="3dp"
+                            android:layout_marginRight="3dp"
+                            android:layout_marginTop="3dp"
+                            android:background="@android:color/background_light"
+                            android:onClick="webGorunumAc"
+                            android:paddingBottom="2dp"
+                            android:paddingTop="2dp">
+
+                            <ImageView
+                                android:id="@+id/sepet9888"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp"
+                                android:layout_alignParentBottom="false"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginRight="10dp"
+                                android:onClick="tiklandi"
+                                android:tag="ist"
+                                app:srcCompat="@drawable/sepet" />
+
+                            <TextView
+                                android:id="@+id/istFiyat"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="false"
+                                android:layout_centerHorizontal="false"
+                                android:layout_centerVertical="true"
+                                android:layout_toLeftOf="@+id/sepet9888"
+                                android:layout_toRightOf="@+id/istResim"
+                                android:gravity="center_vertical|center_horizontal"
+                                android:text="bekleniyor"
+                                android:textColor="@android:color/background_dark"
+                                android:textSize="20sp" />
+
+                            <ImageView
+                                android:id="@+id/istResim"
+                                android:layout_width="180dp"
+                                android:layout_height="100dp"
+                                android:layout_margin="5dp"
+                                android:scaleType="fitCenter"
+                                app:srcCompat="@drawable/ist" />
+                        </RelativeLayout>
+
+
+                        <RelativeLayout
+                            android:id="@+id/bkmKatman"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_marginBottom="0dp"
+                            android:layout_marginLeft="0dp"
+                            android:layout_marginRight="0dp"
+                            android:layout_marginTop="0dp"
+                            android:background="@android:color/background_light"
+                            android:onClick="webGorunumAc"
+                            android:paddingBottom="2dp"
+                            android:paddingTop="2dp">
+
+                            <ImageView
+                                android:id="@+id/sepet9"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp"
+                                android:layout_alignParentBottom="false"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginRight="10dp"
+                                android:onClick="tiklandi"
+                                android:tag="bkm"
+                                app:srcCompat="@drawable/sepet" />
+
+                            <TextView
+                                android:id="@+id/bkmFiyat"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="false"
+                                android:layout_centerHorizontal="false"
+                                android:layout_centerVertical="true"
+                                android:layout_toLeftOf="@+id/sepet9"
+                                android:layout_toRightOf="@+id/bkmResim"
+                                android:gravity="center_vertical|center_horizontal"
+                                android:text="bekleniyor"
+                                android:textColor="@android:color/background_dark"
+                                android:textSize="20sp" />
+
+                            <ImageView
+                                android:id="@+id/bkmResim"
+                                android:layout_width="180dp"
+                                android:layout_height="100dp"
+                                android:layout_margin="5dp"
+                                android:scaleType="fitCenter"
+                                app:srcCompat="@drawable/bkm" />
+                        </RelativeLayout>
+
+
+
+
+                        <RelativeLayout
+                            android:id="@+id/secKatman"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginBottom="3dp"
+                            android:layout_marginLeft="3dp"
+                            android:layout_marginRight="3dp"
+                            android:layout_marginTop="3dp"
+                            android:background="@android:color/background_light"
+                            android:onClick="webGorunumAc"
+                            android:paddingBottom="2dp"
+                            android:paddingTop="2dp">
+
+                            <ImageView
+                                android:id="@+id/sepet8"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp"
+                                android:layout_alignParentBottom="false"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginRight="10dp"
+                                android:onClick="tiklandi"
+                                android:tag="sec"
+                                app:srcCompat="@drawable/sepet" />
+
+                            <TextView
+                                android:id="@+id/secFiyat"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="false"
+                                android:layout_centerHorizontal="false"
+                                android:layout_centerVertical="true"
+                                android:layout_toLeftOf="@+id/sepet8"
+                                android:layout_toRightOf="@+id/secResim"
+                                android:gravity="center_vertical|center_horizontal"
+                                android:text="bekleniyor"
+                                android:textColor="@android:color/background_dark"
+                                android:textSize="20sp" />
+
+                            <ImageView
+                                android:id="@+id/secResim"
+                                android:layout_width="180dp"
+                                android:layout_height="100dp"
+                                android:layout_margin="5dp"
+                                android:scaleType="fitCenter"
+                                app:srcCompat="@drawable/sec" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/pandoraKatman"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginBottom="3dp"
+                            android:layout_marginLeft="3dp"
+                            android:layout_marginRight="3dp"
+                            android:layout_marginTop="3dp"
+                            android:background="@android:color/background_light"
+                            android:onClick="webGorunumAc"
+                            android:paddingBottom="2dp"
+                            android:paddingTop="2dp">
+
+                            <ImageView
+                                android:id="@+id/sepet10"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp"
+                                android:layout_alignParentBottom="false"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginRight="10dp"
+                                android:onClick="tiklandi"
+                                android:tag="pandora"
+                                app:srcCompat="@drawable/sepet" />
+
+                            <TextView
+                                android:id="@+id/pandoraFiyat"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="false"
+                                android:layout_centerHorizontal="false"
+                                android:layout_centerVertical="true"
+                                android:layout_toLeftOf="@+id/sepet10"
+                                android:layout_toRightOf="@+id/pandoraResim"
+                                android:gravity="center_vertical|center_horizontal"
+                                android:text="bekleniyor"
+                                android:textColor="@android:color/background_dark"
+                                android:textSize="20sp" />
+
+                            <ImageView
+                                android:id="@+id/pandoraResim"
+                                android:layout_width="180dp"
+                                android:layout_height="100dp"
+                                android:layout_margin="5dp"
+                                android:scaleType="fitCenter"
+                                app:srcCompat="@drawable/pandora" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/kadigaKatman"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_marginBottom="0dp"
+                            android:layout_marginLeft="3dp"
+                            android:layout_marginRight="3dp"
+                            android:layout_marginTop="0dp"
+                            android:background="@android:color/background_light"
+                            android:onClick="webGorunumAc"
+                            android:paddingBottom="0dp"
+                            android:paddingTop="0dp">
+
+                            <ImageView
+                                android:id="@+id/sepet7"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp"
+                                android:layout_alignParentBottom="false"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginRight="10dp"
+                                android:onClick="tiklandi"
+                                android:tag="kidega"
+                                app:srcCompat="@drawable/sepet" />
+
+                            <TextView
+                                android:id="@+id/kadigaFiyat"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="false"
+                                android:layout_centerHorizontal="false"
+                                android:layout_centerVertical="true"
+                                android:layout_toLeftOf="@+id/sepet7"
+                                android:layout_toRightOf="@+id/kadigaResim"
+                                android:gravity="center_vertical|center_horizontal"
+                                android:text="bekleniyor"
+                                android:textColor="@android:color/background_dark"
+                                android:textSize="20sp" />
+
+                            <ImageView
+                                android:id="@+id/kadigaResim"
+                                android:layout_width="180dp"
+                                android:layout_height="100dp"
+                                android:layout_margin="5dp"
+                                android:scaleType="fitCenter"
+                                app:srcCompat="@drawable/kidega" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/ukaKatman"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginBottom="3dp"
+                            android:layout_marginLeft="3dp"
+                            android:layout_marginRight="3dp"
+                            android:layout_marginTop="3dp"
+                            android:background="@android:color/background_light"
+                            android:onClick="webGorunumAc"
+                            android:paddingBottom="2dp"
+                            android:paddingTop="2dp">
+
+                            <ImageView
+                                android:id="@+id/sepet6"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp"
+                                android:layout_alignParentBottom="false"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginRight="10dp"
+                                android:onClick="tiklandi"
+                                android:tag="uka"
+                                app:srcCompat="@drawable/sepet" />
+
+                            <TextView
+                                android:id="@+id/ukaFiyat"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="false"
+                                android:layout_centerHorizontal="false"
+                                android:layout_centerVertical="true"
+                                android:layout_toLeftOf="@+id/sepet6"
+                                android:layout_toRightOf="@+id/ukaResim"
+                                android:gravity="center_vertical|center_horizontal"
+                                android:text="bekleniyor"
+                                android:textColor="@android:color/background_dark"
+                                android:textSize="20sp" />
+
+                            <ImageView
+                                android:id="@+id/ukaResim"
+                                android:layout_width="180dp"
+                                android:layout_height="100dp"
+                                android:layout_margin="5dp"
+                                android:scaleType="fitCenter"
+                                app:srcCompat="@drawable/uka" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/amazonKatman"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginBottom="3dp"
+                            android:layout_marginLeft="3dp"
+                            android:layout_marginRight="3dp"
+                            android:layout_marginTop="3dp"
+                            android:background="@android:color/background_light"
+                            android:onClick="webGorunumAc"
+                            android:paddingBottom="2dp"
+                            android:paddingTop="2dp">
+
+                            <ImageView
+                                android:id="@+id/sepet5"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp"
+                                android:layout_alignParentBottom="false"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginRight="10dp"
+                                android:onClick="tiklandi"
+                                android:tag="amazon"
+                                app:srcCompat="@drawable/sepet" />
+
+                            <TextView
+                                android:id="@+id/amazonFiyat"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="false"
+                                android:layout_centerHorizontal="false"
+                                android:layout_centerVertical="true"
+                                android:layout_toLeftOf="@+id/sepet5"
+                                android:layout_toRightOf="@+id/amazonResim"
+                                android:gravity="center_vertical|center_horizontal"
+                                android:text="bekleniyor"
+                                android:textColor="@android:color/background_dark"
+                                android:textSize="20sp" />
+
+                            <ImageView
+                                android:id="@+id/amazonResim"
+                                android:layout_width="180dp"
+                                android:layout_height="100dp"
+                                android:layout_margin="5dp"
+                                android:scaleType="fitCenter"
+                                app:srcCompat="@drawable/amazon" />
+                        </RelativeLayout>
+
+
+                        <RelativeLayout
+                            android:id="@+id/n11Katman"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginBottom="3dp"
+                            android:layout_marginLeft="3dp"
+                            android:layout_marginRight="3dp"
+                            android:layout_marginTop="3dp"
+                            android:background="@android:color/background_light"
+                            android:onClick="webGorunumAc"
+                            android:paddingBottom="2dp"
+                            android:paddingTop="2dp">
+
+                            <ImageView
+                                android:id="@+id/sepet12"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp"
+                                android:layout_alignParentBottom="false"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginRight="10dp"
+                                android:onClick="tiklandi"
+                                android:tag="n11"
+                                app:srcCompat="@drawable/sepet" />
+
+                            <TextView
+                                android:id="@+id/n11Fiyat"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="false"
+                                android:layout_centerHorizontal="false"
+                                android:layout_centerVertical="true"
+                                android:layout_toLeftOf="@+id/sepet12"
+                                android:layout_toRightOf="@+id/n11Resim"
+                                android:gravity="center_vertical|center_horizontal"
+                                android:text="bekleniyor"
+                                android:textColor="@android:color/background_dark"
+                                android:textSize="20sp" />
+
+                            <ImageView
+                                android:id="@+id/n11Resim"
+                                android:layout_width="180dp"
+                                android:layout_height="100dp"
+                                android:layout_margin="5dp"
+                                android:scaleType="fitCenter"
+                                app:srcCompat="@drawable/nadir" />
+                        </RelativeLayout>
+
+
+                        <RelativeLayout
+                            android:id="@+id/kitapkolikKatman"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:background="@android:color/background_light"
+                            android:onClick="webGorunumAc"
+                            android:paddingBottom="2dp"
+                            android:paddingTop="2dp">
+
+                            <ImageView
+                                android:id="@+id/sepet4"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp"
+                                android:layout_alignParentBottom="false"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginRight="10dp"
+                                android:onClick="tiklandi"
+                                android:tag="kitapkolik"
+                                app:srcCompat="@drawable/sepet" />
+
+                            <TextView
+                                android:id="@+id/kitapkolikFiyat"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="false"
+                                android:layout_centerHorizontal="false"
+                                android:layout_centerVertical="true"
+                                android:layout_toLeftOf="@+id/sepet4"
+                                android:layout_toRightOf="@+id/kitapkolikResim"
+                                android:gravity="center_vertical|center_horizontal"
+                                android:text="bekleniyor"
+                                android:textColor="@android:color/background_dark"
+                                android:textSize="20sp" />
+
+                            <ImageView
+                                android:id="@+id/kitapkolikResim"
+                                android:layout_width="180dp"
+                                android:layout_height="100dp"
+                                android:layout_margin="5dp"
+                                android:scaleType="fitCenter"
+                                app:srcCompat="@drawable/kitapkolik" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/nadirKatman"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+
+                            android:background="@android:color/background_light"
+                            android:onClick="webGorunumAc"
+
+                          >
+
+                            <ImageView
+                                android:id="@+id/sepet77"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp"
+                                android:layout_alignParentBottom="false"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginRight="10dp"
+                                android:onClick="tiklandi"
+                                android:tag="nadir"
+                                app:srcCompat="@drawable/sepet" />
+
+                            <TextView
+                                android:id="@+id/nadirFiyat"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="false"
+                                android:layout_centerHorizontal="false"
+                                android:layout_centerVertical="true"
+                                android:layout_toLeftOf="@+id/sepet77"
+                                android:layout_toRightOf="@+id/nadirResim"
+                                android:gravity="center_vertical|center_horizontal"
+                                android:text="bekleniyor"
+                                android:textColor="@android:color/background_dark"
+                                android:textSize="20sp" />
+
+                            <ImageView
+                                android:id="@+id/nadirResim"
+                                android:layout_width="180dp"
+                                android:layout_height="100dp"
+                                android:layout_margin="5dp"
+                                android:scaleType="fitCenter"
+                                app:srcCompat="@drawable/nadir" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/ilknoktaKatman"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginBottom="3dp"
+                            android:layout_marginLeft="3dp"
+                            android:layout_marginRight="3dp"
+                            android:layout_marginTop="3dp"
+                            android:background="@android:color/background_light"
+                            android:onClick="webGorunumAc"
+                            android:paddingBottom="2dp"
+                            android:paddingTop="2dp">
+
+                            <ImageView
+                                android:id="@+id/sepet99"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp"
+                                android:layout_alignParentBottom="false"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginRight="10dp"
+                                android:onClick="tiklandi"
+                                android:tag="ilknokta"
+                                app:srcCompat="@drawable/sepet" />
+
+                            <TextView
+                                android:id="@+id/ilknoktaFiyat"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="false"
+                                android:layout_centerHorizontal="false"
+                                android:layout_centerVertical="true"
+                                android:layout_toLeftOf="@+id/sepet99"
+                                android:layout_toRightOf="@+id/ilknoktaResim"
+                                android:gravity="center_vertical|center_horizontal"
+                                android:text="bekleniyor"
+                                android:textColor="@android:color/background_dark"
+                                android:textSize="20sp" />
+
+                            <ImageView
+                                android:id="@+id/ilknoktaResim"
+                                android:layout_width="180dp"
+                                android:layout_height="100dp"
+                                android:layout_margin="5dp"
+                                android:scaleType="fitCenter"
+                                app:srcCompat="@drawable/ilknokta" />
+                        </RelativeLayout>
+
+
+                        <RelativeLayout
+                            android:id="@+id/koalaKatman"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginBottom="3dp"
+                            android:layout_marginLeft="3dp"
+                            android:layout_marginRight="3dp"
+                            android:layout_marginTop="3dp"
+                            android:background="@android:color/background_light"
+                            android:onClick="webGorunumAc"
+                            android:paddingBottom="2dp"
+                            android:paddingTop="2dp">
+
+                            <ImageView
+                                android:id="@+id/sepet99k"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp"
+                                android:layout_alignParentBottom="false"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginRight="10dp"
+                                android:onClick="tiklandi"
+                                android:tag="koala"
+                                app:srcCompat="@drawable/sepet" />
+
+                            <TextView
+                                android:id="@+id/koalaFiyat"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="false"
+                                android:layout_centerHorizontal="false"
+                                android:layout_centerVertical="true"
+                                android:layout_toLeftOf="@+id/sepet99k"
+                                android:layout_toRightOf="@+id/koalaResim"
+                                android:gravity="center_vertical|center_horizontal"
+                                android:text="bekleniyor"
+                                android:textColor="@android:color/background_dark"
+                                android:textSize="20sp" />
+
+                            <ImageView
+                                android:id="@+id/koalaResim"
+                                android:layout_width="180dp"
+                                android:layout_height="100dp"
+                                android:layout_margin="5dp"
+                                android:scaleType="fitCenter"
+                                app:srcCompat="@drawable/matik" />
+                        </RelativeLayout>
+
+
+                        <RelativeLayout
+                            android:id="@+id/trendyolKatman"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_marginBottom="0dp"
+                            android:layout_marginLeft="0dp"
+                            android:layout_marginRight="0dp"
+                            android:layout_marginTop="0dp"
+                            android:background="@android:color/background_light"
+                            android:onClick="webGorunumAc"
+                            android:paddingBottom="2dp"
+                            android:paddingTop="2dp">
+
+                            <ImageView
+                                android:id="@+id/sepet99kp"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp"
+                                android:layout_alignParentBottom="false"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginRight="10dp"
+                                android:onClick="tiklandi"
+                                android:tag="trendyol"
+                                app:srcCompat="@drawable/sepet" />
+
+                            <TextView
+                                android:id="@+id/trendyolFiyat"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="false"
+                                android:layout_centerHorizontal="false"
+                                android:layout_centerVertical="true"
+                                android:layout_toLeftOf="@+id/sepet99kp"
+                                android:layout_toRightOf="@+id/trendyolResim"
+                                android:gravity="center_vertical|center_horizontal"
+                                android:text="bekleniyor"
+                                android:textColor="@android:color/background_dark"
+                                android:textSize="20sp" />
+
+                            <ImageView
+                                android:id="@+id/trendyolResim"
+                                android:layout_width="180dp"
+                                android:layout_height="100dp"
+                                android:layout_margin="5dp"
+                                android:scaleType="fitCenter"
+                                app:srcCompat="@drawable/trendyol" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/kitap365Katman"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_marginBottom="0dp"
+                            android:layout_marginLeft="0dp"
+                            android:layout_marginRight="0dp"
+                            android:layout_marginTop="0dp"
+                            android:background="@android:color/background_light"
+                            android:onClick="webGorunumAc"
+                            android:paddingBottom="2dp"
+                            android:paddingTop="2dp">
+
+                            <ImageView
+                                android:id="@+id/sepet99365kp"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp"
+                                android:layout_alignParentBottom="false"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginRight="10dp"
+                                android:onClick="tiklandi"
+                                android:tag="kitap365"
+                                app:srcCompat="@drawable/sepet" />
+
+                            <TextView
+                                android:id="@+id/kitap365Fiyat"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="false"
+                                android:layout_centerHorizontal="false"
+                                android:layout_centerVertical="true"
+                                android:layout_toLeftOf="@+id/sepet99365kp"
+                                android:layout_toRightOf="@+id/kitap365Resim"
+                                android:gravity="center_vertical|center_horizontal"
+                                android:text="bekleniyor"
+                                android:textColor="@android:color/background_dark"
+                                android:textSize="20sp" />
+
+                            <ImageView
+                                android:id="@+id/kitap365Resim"
+                                android:layout_width="180dp"
+                                android:layout_height="100dp"
+                                android:layout_margin="5dp"
+                                android:scaleType="fitCenter"
+                                app:srcCompat="@drawable/kitapuab" />
+                        </RelativeLayout>
+
+
+
+
+
+
+
+
+                        <RelativeLayout
+                            android:id="@+id/ksKatman"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginBottom="3dp"
+                            android:layout_marginLeft="3dp"
+                            android:layout_marginRight="3dp"
+                            android:layout_marginTop="3dp"
+                            android:background="@android:color/background_light"
+                            android:onClick="webGorunumAc"
+                            android:paddingBottom="2dp"
+                            android:paddingTop="2dp">
+
+                            <ImageView
+                                android:id="@+id/sepet999"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp"
+                                android:layout_alignParentBottom="false"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginRight="10dp"
+                                android:onClick="tiklandi"
+                                android:tag="ks"
+                                app:srcCompat="@drawable/sepet" />
+
+                            <TextView
+                                android:id="@+id/ksFiyat"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="false"
+                                android:layout_centerHorizontal="false"
+                                android:layout_centerVertical="true"
+                                android:layout_toLeftOf="@+id/sepet999"
+                                android:layout_toRightOf="@+id/ksResim"
+                                android:gravity="center_vertical|center_horizontal"
+                                android:text="bekleniyor"
+                                android:textColor="@android:color/background_dark"
+                                android:textSize="20sp" />
+
+                            <ImageView
+                                android:id="@+id/ksResim"
+                                android:layout_width="180dp"
+                                android:layout_height="100dp"
+                                android:layout_margin="5dp"
+                                android:scaleType="fitCenter"
+                                app:srcCompat="@drawable/ks" />
+                        </RelativeLayout>
+
+
+                    </LinearLayout>
+
+
+                </RelativeLayout>
+            </ScrollView>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/sepetler"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="invisible">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@android:color/background_light"
+                android:clickable="true">
+
+            </RelativeLayout>
+
+            <ImageView
+                android:id="@+id/sepetbos"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="30dp"
+                android:visibility="invisible"
+                app:srcCompat="@drawable/sepetbos" />
+
+            <RelativeLayout
+                android:id="@+id/sepetUst"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="false">
+
+                <TextView
+                    android:id="@+id/tumsil"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@+id/imageView5"
+                    android:layout_centerVertical="true"
+                    android:layout_toLeftOf="@+id/imageView5"
+                    android:onClick="sepetTopluSil"
+                    android:text="TÜMÜNÜ SİL"
+                    android:textColor="@android:color/black"
+                    android:textSize="13sp"
+                    android:textStyle="normal|bold" />
+
+                <ImageView
+                    android:id="@+id/imageView5"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="5dp"
+                    android:onClick="sepetTopluSil"
+                    app:srcCompat="@drawable/sepetsil" />
+
+                <ImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="5dp"
+                    app:srcCompat="@drawable/sepet" />
+
+                <RelativeLayout
+                    android:id="@+id/ust"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@+id/imageView2">
+
+                    <TextView
+                        android:id="@+id/sepetToplamFiyat"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/sepetToplamMetin"
+                        android:layout_marginTop="-5dp"
+                        android:text="220,50"
+                        android:textColor="@android:color/black"
+                        android:textSize="22sp"
+                        android:textStyle="normal|bold" />
+
+                    <TextView
+                        android:id="@+id/sepetToplamMetin"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="GENEL TOPLAM"
+                        android:textColor="@android:color/black"
+                        android:textSize="13sp"
+                        android:textStyle="normal|bold" />
+
+                    <TextView
+                        android:id="@+id/sepetToplamFiyat2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBaseline="@+id/sepetToplamFiyat"
+                        android:layout_toRightOf="@+id/sepetToplamFiyat"
+                        android:paddingLeft="10dp"
+                        android:text="TL"
+                        android:textColor="@android:color/black"
+                        android:textSize="15sp"
+                        android:textStyle="normal|bold" />
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/sepetUst">
+
+                <LinearLayout
+                    android:id="@+id/sepetlerListe"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" />
+            </ScrollView>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/buyukResimKatman"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="invisible">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:background="#ddffffff"
+                android:clickable="true"
+                android:onClick="buyukResimKapat">
+
+            </RelativeLayout>
+            <LinearLayout
+                android:id="@+id/buyukResimIc"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin ="35dp"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/buyukResim"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    android:visibility="visible"
+
+                    ads:srcCompat="@android:color/background_light" />
+
+                <ImageView
+                    android:id="@+id/sepetGuncelFiyatAraButon"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:visibility="visible"
+                    android:layout_gravity="top"
+                    android:clickable="true"
+                    ads:srcCompat="@drawable/sepetfiyatbul" />
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+        <WebView
+            android:id="@+id/web"
+            android:layout_width="0dp"
+            android:layout_height="0dp" />
+
+        <WebView
+            android:id="@+id/webKitaplik"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:visibility="invisible" />
+
+        <WebView
+            android:id="@+id/amazonSayfa"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:visibility="gone" />
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/webGorunum"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/altMenu"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="false"
+        android:layout_margin="0dp"
+        android:padding="0dp"
+        android:visibility="invisible">
+
+        <RelativeLayout
+            android:id="@+id/webArka"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#c5ffffff"
+            android:onClick="bos">
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/webGorunumIc"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="2dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="15dp"
+            android:background="@android:color/darker_gray"
+            android:visibility="visible">
+
+            <ImageView
+                android:id="@+id/buyukAcButon"
+                android:layout_width="198dp"
+                android:layout_height="30sp"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="false"
+                android:layout_alignParentRight="false"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="5dp"
+                android:clickable="false"
+                android:onClick="buyukAc"
+                ads:srcCompat="@drawable/ac" />
+
+            <WebView
+                android:id="@+id/kitapWeb"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_above="@+id/buyukAcButon"
+                android:layout_below="@+id/webKapatButon"
+                android:layout_margin="5dp" />
+
+            <ImageView
+                android:id="@+id/webKapatButon"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentTop="true"
+                android:layout_margin="4dp"
+                android:onClick="webGorunumKapat"
+                android:padding="3dp"
+                app:srcCompat="@drawable/kapat" />
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/webKapatButon"
+                android:layout_alignBottom="@+id/webKapatButon"
+                android:layout_alignTop="@+id/webKapatButon"
+                android:layout_marginBottom="4dp"
+                android:layout_marginEnd="4dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="4dp"
+                android:text="KİTAP DETAYLARI"
+                android:textColor="@android:color/white"
+                android:textStyle="normal|bold" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/altMenu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="0dp"
+        android:background="#ececec">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+
+            <LinearLayout
+                android:id="@+id/menuliste"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="5dp"
+                android:gravity="center_vertical|fill_horizontal"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:onClick="anaSayfaGit"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/imageView3"
+                        android:layout_width="match_parent"
+                        android:layout_height="25dp"
+                        android:layout_weight="1"
+                        ads:srcCompat="@drawable/homepng" />
+
+                    <TextView
+                        android:id="@+id/textView3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical|center_horizontal"
+                        android:text="ANASAYFA"
+                        android:textSize="10sp"
+                        android:textStyle="normal" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:onClick="kitaplikAc"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/imageView4"
+                        android:layout_width="match_parent"
+                        android:layout_height="25dp"
+                        android:layout_weight="1"
+                        ads:srcCompat="@drawable/kitaplikalt" />
+
+                    <TextView
+                        android:id="@+id/textView7"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical|center_horizontal"
+                        android:text="KİTAPLIK"
+                        android:textSize="10sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:onClick="barkodAc"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/imageView6"
+                        android:layout_width="match_parent"
+                        android:layout_height="25dp"
+                        android:layout_weight="1"
+                        ads:srcCompat="@drawable/barkodalt" />
+
+                    <TextView
+                        android:id="@+id/textView5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical|center_horizontal"
+                        android:text="BARKOD"
+                        android:textSize="10sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:onClick="sepetKatmanAc"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/imageView7"
+                        android:layout_width="match_parent"
+                        android:layout_height="25dp"
+                        android:layout_weight="1"
+                        ads:srcCompat="@drawable/sepetalt" />
+
+                    <TextView
+                        android:id="@+id/textView6"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical|center_horizontal"
+                        android:text="SEPET"
+                        android:textSize="10sp" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
+
+    <WebView
+        android:id="@+id/babilWebKatman"
+        android:layout_width="0dp"
+        android:layout_height="0dp" />
+
+
+    <WebView
+        android:id="@+id/ksWebKatman"
+        android:layout_width="0dp"
+        android:layout_height="0dp" />
+
+    <WebView
+        android:id="@+id/bkmWebKatman"
+        android:layout_width="0dp"
+        android:layout_height="0dp" />
+
+    <WebView
+        android:id="@+id/k365WebKatman"
+        android:layout_width="0dp"
+        android:layout_height="0dp" />
+
+
+    <RelativeLayout
+        android:id="@+id/ilkEkran"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white"
+        android:visibility="visible">
+
+        <ImageView
+            android:id="@+id/applogo"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            ads:srcCompat="@drawable/applogo" />
+    </RelativeLayout>
+<WebView
+    android:id="@+id/webdenAlSite"
+    android:layout_width="0dp"
+    android:layout_height="0dp">
+</WebView>
+
+</RelativeLayout>
